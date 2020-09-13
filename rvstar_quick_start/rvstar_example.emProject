@@ -187,9 +187,11 @@
     </folder>
     <folder Name="application">
       <file file_name="../nuclei-sdk/application/baremetal/helloworld/main.c" />
+      <file file_name="../nuclei-sdk/application/baremetal/helloworld/test/print_uuid/print_uuid.c" />
     </folder>
     <configuration
       Name="FLASHXIP"
+      c_user_include_directories="$(SolutionDir)/../nuclei-sdk/application/baremetal/helloworld/test/print_uuid"
       linker_section_placements_segments="FLASH RX 0x08000000 0x00020000;RAM RWX 0x20000000 0x00008000"
       project_type="Externally Built Executable" />
   </project>

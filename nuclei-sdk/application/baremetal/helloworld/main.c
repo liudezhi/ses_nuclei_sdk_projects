@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "nuclei_sdk_soc.h"
+#include "print_uuid.h"
 
 void print_misa(void)
 {
@@ -91,10 +92,16 @@ int main(void)
 
     printf("MISA: 0x%lx\r\n", misa);
     print_misa();
-
     for (int i = 0; i < 20; i ++) {
         printf("%d: Hello World From Nuclei RISC-V Processor!\r\n", i);
     }
+
+    get_uuid();
+
+    uint32_t mcu_density = get_mcu_rom_ram_density();
+    printf("mcu density:0x%lx\r\n",mcu_density);
+
+    while(1);
 
     return 0;
 }
